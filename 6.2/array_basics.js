@@ -25,5 +25,5 @@ people = ["Greg", "Mary", "Devon", "James"];
 people.splice(2, 1, "Elizabeth", "Artie");
 console.log(people);
 // Q.9
-let withBob = people.concat(["Bob"]);
+let withBob = people.concat("Bob");
 console.log(withBob);
