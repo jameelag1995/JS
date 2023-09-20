@@ -36,8 +36,3 @@ const bookUtils = {
       : false;
   },
 };
-bookUtils.setPublisher(book1, "somepublisher", "egypt");
-bookUtils.setPublisher(book2, "somepublisher", "syria");
-console.log(book1);
-console.log(book2);
-console.log(bookUtils.isSamePublisher(book1, book2));

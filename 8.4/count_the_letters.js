@@ -25,4 +25,5 @@ function count_the_letters(arr) {
   return { letterCount, mostCommonLetter, maxCount };
 }
 
+// Testing
 console.log(count_the_letters(array));
