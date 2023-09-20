@@ -30,7 +30,10 @@ const bookUtils = {
     book.publisher = { name, location };
   },
   isSamePublisher: function (b1, b2) {
-    return b1.publisher.name === b2.publisher.name && b1.publisher.location === b2.publisher.location ? true : false;
+    return b1.publisher.name === b2.publisher.name &&
+      b1.publisher.location === b2.publisher.location
+      ? true
+      : false;
   },
 };
 bookUtils.setPublisher(book1, "somepublisher", "egypt");
