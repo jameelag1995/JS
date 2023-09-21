@@ -1,6 +1,5 @@
 function date() {
-    
-    let todaysDate = new Date();
+  let todaysDate = new Date();
   // day of th week
   let dayOfTheWeek = todaysDate.toLocaleDateString("default", {
     weekday: "long",
