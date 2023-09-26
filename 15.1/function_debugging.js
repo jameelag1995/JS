@@ -11,6 +11,7 @@ function getSum(arr1, arr2) {
 getSum([1, 2, 3],[(5, 66, 23)]);
 
 /* ----------------------------------- Q1 ----------------------------------- */
+// line 11 getSum([1, 2, 3][(5, 66, 23)]); wrong way of passing arguments 
 // we have a problem in line 4 arr1 is undefined (first for loop)
 // the other problem we have is that sum is set to constant (assignment to constant variable)
 /* ----------------------------------- Q2 ----------------------------------- */
