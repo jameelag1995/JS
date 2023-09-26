@@ -52,10 +52,10 @@ const school = {
     return 'Sorry, no available teachers left.'
   }
 };
-
 /* --------------------------------- testing -------------------------------- */
 console.log(school.findPerson('teachers',2));
 console.log(school.assignStudent(10,'physics'));
+console.log(school.teachers);
 console.log(school.assignStudent(11,'physics'));
 console.log(school.assignStudent(12,'physics'));
 console.log(school.assignStudent(13,'physics'));
