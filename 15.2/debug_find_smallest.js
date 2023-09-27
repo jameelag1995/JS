@@ -1,11 +1,11 @@
 function findSmallest(a, b, c) {
-  if (a > c && b>c) {
-    return c;
-  } else if (a > b && c > b) {
-    return b;
-  } else {
-    return a;
-  }
+    if (a > c && b > c) {
+        return c;
+    } else if (a > b && c > b) {
+        return b;
+    } else {
+        return a;
+    }
 }
 console.log(findSmallest(1, 66, 2));
 
@@ -16,4 +16,4 @@ console.log(findSmallest(1, 66, 2));
 // JS REPL
 /* ----------------------------------- Q3 ----------------------------------- */
 // findSmalest is not defined we need to write findSmallest instead
-// we need to change the condition to something that makes more sense like c < a and c<b then c is smallest 
+// we need to change the condition to something that makes more sense like c < a and c<b then c is smallest

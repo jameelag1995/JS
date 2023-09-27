@@ -1,14 +1,13 @@
 function countOccurrences(str, char) {
-  let counter = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str.charAt(i) === char) {
-      counter++;
+    let counter = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === char) {
+            counter++;
+        }
     }
-  }
-  return counter;
+    return counter;
 }
-;
-console.log(countOccurrences("ini mini miny moe", "n"))
+console.log(countOccurrences("ini mini miny moe", "n"));
 /* ----------------------------------- Q1 ----------------------------------- */
 // problem in line 5 counter + 1;
 /* ----------------------------------- Q2 ----------------------------------- */
