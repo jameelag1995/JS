@@ -1,0 +1,9 @@
+const h1El = document.querySelector('h1');
+h1El.style.color = 'blue';
+const pEl = document.querySelector('.paragraph');
+pEl.style.fontSize = '30px';
+const divDescEl = document.querySelector('#description');
+divDescEl.style.display = 'inline-block';
+const bodyEl = document.querySelector('body');
+bodyEl.style.backgroundColor = 'green';
+document.title = 'Something Else';
