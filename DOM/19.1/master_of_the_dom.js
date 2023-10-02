@@ -7,6 +7,6 @@ innerul.appendChild(subtitle4);
 const outerul = document.querySelector('ul');
 const allLi = document.querySelectorAll('ul li');
 outerul.removeChild(allLi[allLi.length -1]);
-document.title = 'Master Of The Dom'
+document.title = 'Master Of The Dom';
 const p = document.querySelector('div p');
-p.innerText = 'SAY MY NAME!'
+p.innerText = 'SAY MY NAME!';
