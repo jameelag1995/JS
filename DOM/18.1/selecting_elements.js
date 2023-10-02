@@ -8,6 +8,8 @@ const divYEl = document.getElementById("y");
 const inputsEls = document.getElementsByTagName("input");
 // foreach doesn't work on html collection so we transform it into an array 
 const inputsarr = [...inputsEls];
+const allEls = document.body.getElementsByTagName('*'); // selecting all elements
+
 /* --------------------------- Using QuerySelector -------------------------- */
 const h1ElQs = document.querySelector("h1");
 const pElQs = document.querySelector("p");
@@ -16,6 +18,7 @@ const imgElQs = document.querySelector("img");
 const divXElQs = document.querySelector(".x")[0];
 const divYElQs = document.querySelector("#y");
 const inputsElsQs = document.querySelectorAll("input");
+const allElsQs = document.body.querySelectorAll('*'); // selecting all elements
 
 inputsarr.forEach((input) => {
     console.log(input);
