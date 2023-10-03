@@ -12,3 +12,15 @@ h1.classList.add('pad');
 p.classList.add('pad');
 button.classList.add('pad');
 button.classList.add('buttonstyle');
+button.addEventListener('mouseover',function (){
+    let h = Math.floor((Math.random()* window.innerHeight));
+    let w = Math.floor((Math.random()*window.innerWidth));
+    button.style.transition = 'all 0.5s ease-in-out';
+    button.style.left = `${w}px`;
+    button.style.top = `${h}px`;
+});
+button.addEventListener('click',function(){
+    button.innerText = "You Are A FOOL!!"
+    button.style.backgroundColor = '#333';
+    
+})
