@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(88,82,83,1) 100%);
+}
+.bglight {
+    background: rgb(255,241,0);
+background: radial-gradient(circle, rgba(255,241,0,1) 49%, rgba(255,255,255,1) 100%);
+}
+.bulb{
+    width: 717px;
+    height: 744px;
+    background-image: url('./lightbulb.png');
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
