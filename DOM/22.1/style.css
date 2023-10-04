@@ -20,7 +20,8 @@ form{
 input{
     width: 180px;
     height: 25px;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding: 0 8px;
 }
 #termsinput{
     width: 25px;

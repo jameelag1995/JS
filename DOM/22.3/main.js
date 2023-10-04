@@ -6,7 +6,6 @@ console.log(randomLetter);
 // display user input
 const letter = document.querySelector(".letter");
 const letterDisplay = document.createElement("h2");
-const userinput = document.querySelector("#userinput");
 const display = document.querySelector(".display");
 const displayContent = document.createElement("h3");
 letterDisplay.innerText = "?";
@@ -22,7 +21,6 @@ playagainbtn.classList.add("btn");
 const correctdiv = document.querySelector(".correct");
 correctdiv.append(correctMsg, playagainbtn);
 correctdiv.classList.toggle("correcthidden");
-userinput.focus();
 
 // play again event
 playagainbtn.addEventListener("click", () => {
@@ -30,11 +28,10 @@ playagainbtn.addEventListener("click", () => {
 });
 
 // guess the letter event
-userinput.addEventListener("keyup", (e) => {
-    displayContent.innerText += `${e.target.value[e.target.value.length - 1]},`;
-    if (e.target.value[e.target.value.length - 1] === randomLetter) {
+window.addEventListener("keyup", (e) => {
+    displayContent.innerText += `${e.key},`;
+    if (e.key === randomLetter) {
         letterDisplay.innerText = randomLetter;
         correctdiv.classList.toggle("correcthidden");
-        return;
     }
 });
