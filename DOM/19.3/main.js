@@ -2,8 +2,9 @@ const inputs = document.querySelectorAll(".vertical input");
 const form = document.querySelector("form");
 let p = (document.createElement =
     "Wrong input! enter numbers between 0-9 only");
-form.addEventListener("submit", (e) => e.preventDefault());
+
 inputs[0].focus();
+
 inputs.forEach((input, index) => {
     input.addEventListener("keyup", (e) => {
         if (
@@ -19,16 +20,18 @@ inputs.forEach((input, index) => {
             0 <= parseInt(e.target.value) &&
             parseInt(e.target.value) <= 9
         ) {
-            form.submit();
-            console.log(`form submitted`);
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                console.log(`form submitted`);
+            });
         }
     });
 });
 // Listen to paste on the document
-document.addEventListener("paste", function (e) {
+form.addEventListener("paste", function (e) {
     // if the target is a text input
     if (e.target.type === "text") {
-        var data = e.clipboardData.getData("text");
+        let data = e.clipboardData.getData("text");
         // split clipboard text into single characters
         data = data.split("");
         // find all other text inputs

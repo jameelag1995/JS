@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30vh;
+    padding: 20px;
+    gap: 20px;
+    background: #54965a;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+}
+input{
+    width: 180px;
+    height: 25px;
+    border-radius: 20px;
+}
+#termsinput{
+    width: 25px;
+}
+.popup{
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+    gap: 20px;
+    width: 300px;
+    border-radius: 20px;
+    background: #315734;
+    position: absolute;
+}
+button{
+    width: 100px;
+    height: 30px;
+    background: #c0bebe;
+    border-radius: 20px;
+}
+.hiddenpopup{
+    display: none;
+}
