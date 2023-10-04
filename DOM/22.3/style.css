@@ -13,6 +13,13 @@ main {
     background: #4288bb;
     gap: 20px;
 }
+.letter {
+    width: 30px;
+    height: 30px;
+    background: #cac8c8;
+    text-align: center;
+    border-radius: 5px;
+}
 
 #userinput {
     
