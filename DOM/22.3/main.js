@@ -1,6 +1,7 @@
 // Random letter Generator
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 const randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+console.log(randomLetter);
 
 // display user input
 const letter = document.querySelector(".letter");
@@ -9,7 +10,6 @@ const userinput = document.querySelector("#userinput");
 const display = document.querySelector(".display");
 const displayContent = document.createElement("h3");
 letterDisplay.innerText = "?";
-console.log(randomLetter);
 letter.append(letterDisplay);
 display.append(displayContent);
 
