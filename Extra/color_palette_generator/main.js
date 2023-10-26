@@ -30,5 +30,5 @@ saveBtn.addEventListener("click", () => {
     const currsec = document.querySelector("section");
     let newSec = currsec.cloneNode(true);
     footdiv.insertAdjacentElement("afterbegin", newSec);
-    footdiv.style.overflow = "scroll";
+    footdiv.style.overflowY = "scroll";
 });
