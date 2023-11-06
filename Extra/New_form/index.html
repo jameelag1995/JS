@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <section class="left-side">
+                <h2>General Information</h2>
+                <select name="title" id="title" required>
+                    <option value="Title" disabled selected hidden>
+                        Title
+                    </option>
+                    <option value="mr">Mr.</option>
+                    <option value="mrs">Mrs.</option>
+                </select>
+                <div class="two-inputs">
+                    <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        placeholder="First Name"
+                    />
+                    <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        placeholder="Last Name"
+                    />
+                </div>
+                <select name="Position" id="Position" required>
+                    <option value="Position" disabled selected hidden>
+                        Position
+                    </option>
+                    <option value="first">Software Developer</option>
+                    <option value="second">Web Developer</option>
+                </select>
+                <input
+                    type="text"
+                    name="company"
+                    id="company"
+                    placeholder="Company"
+                />
+                <div class="two-inputs">
+                    <input
+                        type="text"
+                        name="business"
+                        id="business"
+                        placeholder="Business Area"
+                    />
+                    <select name="Employees" id="Employees" required>
+                        <option value="Employees" disabled selected hidden>
+                            Employees
+                        </option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="right-side">
+                <h2>Contact Details</h2>
+                <input
+                    type="text"
+                    name="street"
+                    id="street"
+                    placeholder="Street + Nr"
+                />
+                <input
+                    type="text"
+                    name="additional"
+                    id="additional"
+                    placeholder="Additional Information"
+                />
+                <div class="two-inputs">
+                    <input
+                        type="number"
+                        name="zipcode"
+                        id="zipcode"
+                        placeholder="Zip Code"
+                    />
+                    <select name="Place" id="Place" required>
+                        <option value="Place" disabled selected hidden>
+                            Place
+                        </option>
+                    </select>
+                </div>
+                <select name="Country" id="Country" required>
+                    <option value="Country" disabled selected hidden>
+                        Country
+                    </option>
+                </select>
+                <div class="two-inputs">
+                    <input
+                        type="number"
+                        name="code"
+                        id="code"
+                        placeholder="code"
+                    />
+                    <input
+                        type="number"
+                        name="phonenumber"
+                        id="phonenumber"
+                        placeholder="Phone Number"
+                    />
+                </div>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                />
+                <label for="terms"
+                    ><input type="checkbox" name="terms" id="terms" />I do
+                    accept the
+                    <a href=""> &nbsp;Terms and Conditions&nbsp;</a> of your
+                    site</label
+                >
+                <button>Register Badge</button>
+            </section>
+        </main>
+    </body>
+</html>

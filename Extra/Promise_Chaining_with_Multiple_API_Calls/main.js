@@ -1,46 +1,48 @@
-fetch('/users')
-.then((response)=>{
-    if(!response.ok){ throw new Error(`Status code Error: ${response.status}`)};
-    return response.json();
-})
-.then((data)=>{
-    const usersdata = document.getElementById('users');
-    data.foreach(user =>{
-        let userDiv = document.createElement('div');
-        userDiv.classList.add('user');
-        userDiv.innerHTML = `<h2>${user.name}</h2>
+const usersURL = "https://jsonplaceholder.typicode.com/users";
+const postsURL = "https://jsonplaceholder.typicode.com/posts";
+fetch(usersURL)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`Problem with fetching users. Status code Error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then((data) => {
+        const usersdata = document.getElementById("users");
+        data.forEach((user, index) => {
+            let userDiv = document.createElement("div");
+            userDiv.classList.add("user");
+            userDiv.innerHTML = `<h2>${user.name}</h2>
         <p><strong>Email:</strong> ${user.email}</p>
         <div class="posts"></div>`;
-        usersdata.append(userDiv);
+            usersdata.append(userDiv);
 
-        fetch(`posts?userId=${user.id}`)
-        .then((response)=>{
-            if(!response.ok){
-                throw new Error(`Status code Error: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data)=>{
-            let userPosts = document.querySelector('.posts');
-            let postsHeader = document.createElement('header');
-            postsHeader.innerHTML = '<h2>Posts</h2>';
-            userPosts.append(postsHeader);
-            data.foreach((post)=>{
-                let postDiv = document.createElement('div');
-                postDiv.classList.add('post');
-                postDiv.innerHTML = `<strong>${post.title}</strong><br>${post.body}`;
-                userPosts.append(postDiv);
-            })
-
-
-        })
-        .catch((err)=>{
-            console.log(`Error fetching posts`);
-            console.log('Error',err);
-        })
+            fetch(postsURL + `?userId=${user.id}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(
+                            `Problem with fetching posts. Status code Error: ${response.status}`
+                        );
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    let userPosts = document.querySelectorAll(".posts");
+                    let postsHeader = document.createElement("header");
+                    postsHeader.innerHTML = "<h2>Posts</h2>";
+                    userPosts[index].append(postsHeader);
+                    data.forEach((post) => {
+                        let postDiv = document.createElement("div");
+                        postDiv.classList.add("post");
+                        postDiv.innerHTML = `<strong>${post.title}</strong><br>${post.body}`;
+                        userPosts[index].append(postDiv);
+                    });
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                });
+        });
     })
-})
-.catch((err)=>{
-    console.log('Error Fetching Users');
-    console.log('Error',err);
-})
+    .catch((err) => {
+        console.log(err.message);
+    });
