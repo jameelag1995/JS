@@ -149,32 +149,3 @@ movieDatabase.removeRating("cast away", 5.3);
 console.log(movieDatabase.movies);
 
 
-function createMovieCard(){
-    movies.forEach((movie) =>{
-        let mainDiv = document.createElement('main');
-        let movieInfoDiv = document.createElement('div');
-        movieInfoDiv.classList.add('movie-info');
-        let moviePosterDiv = document.createElement('div');
-        moviePosterDiv.classList.add('movie-poster');
-        let title = document.createElement('h1');
-        title.innerText = movie.title;
-        let genre = document.createElement('h3');
-        genre.innerText = `Genre: ${movie.genre}`;
-        let director = document.createElement('h3');
-        director.innerText = `Director: ${movie.director}`;
-        let releaseYear = document.createElement('h3');
-        releaseYear.innerText = `Release Year: ${movie.releaseYear}`;
-        let rating = document.createElement('h3');
-        rating.innerText = `Rating: ${movie.rating}`;
-        let votes = document.createElement('h3');
-        votes.innerText = `Votes: ${movie.votes}`;
-        let poster = document.createElement('img');
-        poster.src = movie.cover;
-        movieInfoDiv.append(title,genre,director,releaseYear,rating,votes);
-        moviePosterDiv.append(poster);
-        mainDiv.append(movieInfoDiv,moviePosterDiv);
-        document.body.append(mainDiv);
-
-    })
-}
-createMovieCard();
