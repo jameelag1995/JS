@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: skyblue;
+    background-color: darkslategray;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -14,7 +14,7 @@ body{
     height: 100vh;
 }
 main{
-    margin: 8px;
+    
     background-color: lightslategray;
     display: flex;
     justify-content: center;
