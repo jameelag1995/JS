@@ -1,50 +1,55 @@
 let movies = [
     {
-        id: 1,
-        title: "The Shawshank Redemption",
-        genre: "Drama",
-        director: "Frank Darabont",
-        releaseYear: 1994,
-        rating: 9.3,
-        votes: 2345890,
+      id: 1,
+      title: "The Shawshank Redemption",
+      genre: "Drama",
+      director: "Frank Darabont",
+      releaseYear: 1994,
+      rating: 9.3,
+      votes: 2345890,
+      cover: "https://m.media-amazon.com/images/I/51rXi2SXCXL._AC_UF894,1000_QL80_.jpg"
     },
     {
-        id: 2,
-        title: "The Godfather",
-        genre: "Crime, Drama",
-        director: "Francis Ford Coppola",
-        releaseYear: 1972,
-        rating: 9.2,
-        votes: 1620360,
+      id: 2,
+      title: "The Godfather",
+      genre: "Crime, Drama",
+      director: "Francis Ford Coppola",
+      releaseYear: 1972,
+      rating: 9.2,
+      votes: 1620360,
+      cover: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
     },
     {
-        id: 3,
-        title: "The Godfather: Part II",
-        genre: "Crime, Drama",
-        director: "Francis Ford Coppola",
-        releaseYear: 1974,
-        rating: 9.0,
-        votes: 1133175,
+      id: 3,
+      title: "The Godfather: Part II",
+      genre: "Crime, Drama",
+      director: "Francis Ford Coppola",
+      releaseYear: 1974,
+      rating: 9.0,
+      votes: 1133175,
+      cover: "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
     },
     {
-        id: 4,
-        title: "The Dark Knight",
-        genre: "Action, Crime, Drama",
-        director: "Christopher Nolan",
-        releaseYear: 2008,
-        rating: 9.0,
-        votes: 2303232,
+      id: 4,
+      title: "The Dark Knight",
+      genre: "Action, Crime, Drama",
+      director: "Christopher Nolan",
+      releaseYear: 2008,
+      rating: 9.0,
+      votes: 2303232,
+      cover: "https://musicart.xboxlive.com/7/abb02f00-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080"
     },
     {
-        id: 5,
-        title: "12 Angry Men",
-        genre: "Crime, Drama",
-        director: "Sidney Lumet",
-        releaseYear: 1957,
-        rating: 9.0,
-        votes: 689845,
+      id: 5,
+      title: "12 Angry Men",
+      genre: "Crime, Drama",
+      director: "Sidney Lumet",
+      releaseYear: 1957,
+      rating: 9.0,
+      votes: 689845,
+      cover: "https://ih1.redbubble.net/image.1856219220.0238/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
     },
-];
+  ];
 
 function getMovieInitials(title) {
     let titleArr = title.split(" ");
@@ -105,33 +110,24 @@ const movieDatabase = {
         });
     },
     removeMovie: function (movieTitle) {
-        let index = 0;
-        for (let i = 0; i < this.movies.length; i++) {
-            if (this.movies[i].title === movieTitle.toUpperCase()) {
-                index = i;
-                break;
-            }
-        }
-        this.movies.splice(index, 1);
+        this.movies = this.movies.filter(
+            (movie) => movie.title !== movieTitle.toUpperCase()
+        );
     },
     addRating: function (movieTitle, rating) {
-        for (movie of this.movies) {
-            if (movieTitle.toUpperCase() === movie.title) {
-                movie.ratings.push(rating);
-            }
+        const movie = this.movies.find(
+            (movie) => movie.title === movieTitle.toUpperCase()
+        );
+        if (movie) {
+            movie.ratings.push(rating);
         }
     },
     removeRating: function (movieTitle, rating) {
-        let index = 0;
-        for (movie of this.movies) {
-            if (movieTitle.toUpperCase() === movie.title) {
-                for (let i = 0; i < movie.ratings.length; i++) {
-                    if (movie.ratings[i] == rating) {
-                        index = i;
-                    }
-                }
-                movie.ratings.splice(index, 1);
-            }
+        const movie = this.movies.find(
+            (movie) => movie.title === movieTitle.toUpperCase()
+        );
+        if (movie) {
+            movie.ratings = movie.ratings.filter((r) => r !== rating);
         }
     },
     searchMovie: function (str) {
@@ -140,14 +136,45 @@ const movieDatabase = {
         );
     },
 };
-
+console.log("testing movies database");
 movieDatabase.addMovie("Pulp Fiction");
 movieDatabase.addMovie("Cast Away");
-console.log(movieDatabase.movies);
 movieDatabase.removeMovie("Pulp Fiction");
+console.log(movieDatabase.movies);
 movieDatabase.addRating("cast away", 5.1);
 movieDatabase.addRating("cast away", 5.3);
 movieDatabase.addRating("cast away", 5.5);
 console.log(movieDatabase.movies);
 movieDatabase.removeRating("cast away", 5.3);
 console.log(movieDatabase.movies);
+
+
+function createMovieCard(){
+    movies.forEach((movie) =>{
+        let mainDiv = document.createElement('main');
+        let movieInfoDiv = document.createElement('div');
+        movieInfoDiv.classList.add('movie-info');
+        let moviePosterDiv = document.createElement('div');
+        moviePosterDiv.classList.add('movie-poster');
+        let title = document.createElement('h1');
+        let genre = document.createElement('h3');
+        let director = document.createElement('h3');
+        let releaseYear = document.createElement('h3');
+        let rating = document.createElement('h3');
+        let votes = document.createElement('h3');
+        let poster = document.createElement('img');
+        title.innerText = movie.title;
+        genre.innerText = `Genre: ${movie.genre}`;
+        director.innerText = `Director: ${movie.director}`;
+        releaseYear.innerText = `Release Year: ${movie.releaseYear}`;
+        rating.innerText = `Rating: ${movie.rating}`;
+        votes.innerText = `Votes: ${movie.votes}`;
+        poster.src = movie.cover;
+        movieInfoDiv.append(title,genre,director,releaseYear,rating,votes);
+        moviePosterDiv.append(poster);
+        mainDiv.append(movieInfoDiv,moviePosterDiv);
+        document.body.append(mainDiv);
+
+    })
+}
+createMovieCard();
