@@ -17,14 +17,21 @@
             <label for="director">Director:</label>
             <input type="text" id="director" name="director" required>
             <label for="releaseyear">Release Year:</label>
-            <input type="text" id="releaseyear" name="releaseyear" required>
+            <input type="number" id="releaseyear" name="releaseyear" required>
             <label for="rating">Rating:</label>
-            <input type="text" id="rating" name="rating" required>
+            <input type="number" id="rating" name="rating" required>
             <label for="votes">Votes:</label>
-            <input type="text" id="votes" name="votes" required>
+            <input type="number" id="votes" name="votes" required>
             <label for="poster">Poster Source:</label>
-            <input type="text" id="poster" name="poster" required>
+            <input type="url" id="poster" name="poster" required>
             <input type="submit" value="Add Movie" id="submit-btn">
+            <div class="sort-container">
+                <input type="text" name="search" id="search" placeholder="search...">
+
+                <input type="button" value="Sort Alphabetically" id="sort-alpha">
+                <input type="button" value="Sort By Release Year" id="sort-rlsyear">
+                <input type="button" value="Sort By Rating" id="sort-rating">
+            </div>
         </form>
     </header>
     <div class="movie-list">

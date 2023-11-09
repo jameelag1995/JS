@@ -51,7 +51,7 @@ let movies = [
     },
 ];
 
-const movieList = document.querySelector('.movie-list');
+const movieList = document.querySelector(".movie-list");
 function createMovieCard(movie) {
     let mainDiv = document.createElement("main");
     let movieInfoDiv = document.createElement("div");
@@ -78,14 +78,14 @@ function createMovieCard(movie) {
     movieList.append(mainDiv);
 }
 
-movies.forEach(movie =>{
+movies.forEach((movie) => {
     createMovieCard(movie);
-})
+});
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    const id = movies.length + 1;
     const title = document.querySelector("#title").value;
     const genre = document.querySelector("#genre").value;
     const director = document.querySelector("#director").value;
@@ -95,6 +95,7 @@ form.addEventListener("submit", (e) => {
     const cover = document.querySelector("#poster").value;
 
     const movie = {
+        id,
         title,
         genre,
         director,
@@ -105,4 +106,62 @@ form.addEventListener("submit", (e) => {
     };
     movies.push(movie);
     createMovieCard(movie);
+});
+
+function searchMovie(str) {
+    return movies.filter((movie) =>
+        movie.title.toLowerCase().includes(str.toLowerCase())
+    );
+}
+
+const searchInput = document.querySelector("#search");
+searchInput.addEventListener("keyup", (e) => {
+    movieList.innerHTML = "";
+    const searchedMovies = searchMovie(e.target.value);
+    searchedMovies.forEach((movie) => {
+        createMovieCard(movie);
+    });
+});
+
+const sortAlpha = document.querySelector("#sort-alpha");
+const sortRlsYear = document.querySelector("#sort-rlsyear");
+const sortRating = document.querySelector("#sort-rating");
+
+sortAlpha.addEventListener("click", (e) => {
+    movieList.innerHTML = "";
+    const sortedMovies = [...movies].sort((a, b) => {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+
+        if (titleA < titleB) {
+            return -1;
+        }
+        if (titleA > titleB) {
+            return 1;
+        }
+        return 0;
+    });
+    sortedMovies.forEach((movie) => {
+        createMovieCard(movie);
+    });
+});
+
+sortRlsYear.addEventListener("click", (e) => {
+    movieList.innerHTML = "";
+    const sortedMovies = [...movies].sort((a, b) => {
+        return a.releaseYear - b.releaseYear;
+    });
+    sortedMovies.forEach((movie) => {
+        createMovieCard(movie);
+    });
+});
+
+sortRating.addEventListener("click", (e) => {
+    movieList.innerHTML = "";
+    const sortedMovies = [...movies].sort((a, b) => {
+        return b.rating - a.rating;
+    });
+    sortedMovies.forEach((movie) => {
+        createMovieCard(movie);
+    });
 });

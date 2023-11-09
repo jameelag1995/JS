@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
     background-color: darkslategray;
@@ -20,8 +21,8 @@ main{
     align-items: flex-start;
     gap: 5px;
     padding: 8px;
-    width: 600px;
-    height: 300px;
+    width: 60%;
+    height: 20%;
     border-radius: 10px;
     box-shadow: 10px 10px 5px #333;
 }
@@ -48,12 +49,17 @@ img{
     border-radius: 10px;
 }
 header{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-
 }
 form{
     display: flex;
     flex-direction: column;
+    width: 80%;
+    height: 100%;
     gap: 5px;
     font-size: 23px;
     color: #fff;
@@ -75,7 +81,44 @@ input{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
+    width: 80%;
+    background-color: lightgoldenrodyellow;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+#sort-alpha{
+    background-color: lightgreen;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+#sort-alpha:hover{
+    background-color: rgb(119, 197, 119);
+}
+#sort-rlsyear{
+    background-color: lightcoral;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+#sort-rlsyear:hover{
+    background-color: rgb(194, 103, 103);
+}
+#sort-rating{
+    background-color: lightseagreen;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+#sort-rating:hover{
+    background-color: rgb(25, 139, 134);
+}
+.sort-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
