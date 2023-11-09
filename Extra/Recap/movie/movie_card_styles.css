@@ -54,6 +54,7 @@ header{
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 10px 0;
 }
 form{
     display: flex;
