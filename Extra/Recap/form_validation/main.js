@@ -35,10 +35,11 @@ function hideErrorMsg(dist) {
 usernameInput.addEventListener("keyup", (e) => {
     if (e.target.value.length < 3) {
         displayErrorMsg(usernameErr, "name must be at least 3 characters long");
+        usernameInput.classList.add('error');
         isValid = false;
-        return;
     } else {
         hideErrorMsg(usernameErr);
+        usernameInput.classList.remove('error');
         isValid = true;
     }
 });
@@ -49,9 +50,10 @@ emailInput.addEventListener("keyup", (e) => {
     if (!re.test(e.target.value)) {
         displayErrorMsg(emailErr, "Please enter a valid email.");
         isValid = false;
-        return;
+        emailInput.classList.add('error');
     } else {
         hideErrorMsg(emailErr);
+        emailInput.classList.remove('error');
         isValid = true;
     }
 });
@@ -66,10 +68,11 @@ passwordInput.addEventListener("keyup", (e) => {
             passwordErr,
             "Password must be at least 8 characters long, containing lowercase, uppercase letters, numbers, and a special character."
         );
-        isValid = false;
-        return;
+        passwordInput.classList.add('error');
+        isValid = false;        
     } else {
         hideErrorMsg(passwordErr);
+        passwordInput.classList.remove('error');
         isValid = true;
     }
 });
@@ -78,8 +81,10 @@ confirmPasswordInput.addEventListener("keyup", (e) => {
     if (e.target.value !== passwordInput.value) {
         displayErrorMsg(confirmPasswordErr, "Passwords do not match.");
         isValid = false;
+        confirmPasswordInput.classList.add('error');
     } else {
         hideErrorMsg(confirmPasswordErr);
+        confirmPasswordInput.classList.remove('error');
         isValid = true;
     }
 });
