@@ -1,0 +1,59 @@
+table,
+th,
+tr,
+td {
+    border: 1px solid skyblue;
+    background-color: #fff;
+}
+th,
+td {
+    width: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+th {
+    background-color: lightseagreen;
+}
+#equal {
+    background-color: lightsalmon;
+}
+td:hover {
+    background-color: gold;
+}
+table {
+    width: 100%;
+    margin-top: 50px;
+}
+input {
+    height: 30px;
+    font-weight: bold;
+}
+button {
+    height: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(117, 194, 117);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+body {
+    background-color: lightyellow;
+}
+label {
+    font-weight: bolder;
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+    font-size: 52px;
+
+}

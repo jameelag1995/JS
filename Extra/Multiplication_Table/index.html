@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multiplication Table</title>
+        <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>جدول الضّرب</h1>
+        <header>
+            <label for="column-input">Columns:</label>
+            <input
+                type="number"
+                name="column-input"
+                id="column-input"
+                placeholder="enter number of columns"
+                value="20"
+            />
+            <label for="row-input">Rows:</label>
+            <input
+                type="number"
+                name="row-input"
+                id="row-input"
+                placeholder="enter number of rows"
+                value="20"
+            />
+            <button id="calc-btn">Calculate New Table</button>
+        </header>
+
+        <table id="multip-table"></table>
+        <script src="./main.js"></script>
+    </body>
+</html>
