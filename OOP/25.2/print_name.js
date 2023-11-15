@@ -3,11 +3,11 @@ const obj = {
     printname: function () {
         console.log(`my name is ${this.name}`);
     },
-    printnamedlayed: function () {
+    printnamedelayed: function () {
         setTimeout(function(){
-            obj.printname();
-        }, 1000);
+            this.printname();
+        }.bind(this), 1000);
     },
 };
 obj.printname();
-obj.printnamedlayed();
+obj.printnamedelayed();

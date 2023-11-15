@@ -11,8 +11,9 @@ function printName() {
 }
 function printHeroes(heroes, printFunc) {
     for (hero of heroes) {
-        hero.printFunc = printFunc;
-        hero.printFunc();
+        // hero.printFunc = printFunc;
+        // hero.printFunc();
+        printFunc.call(hero)
     }
 }
 printHeroes(superHeroes, printName);
