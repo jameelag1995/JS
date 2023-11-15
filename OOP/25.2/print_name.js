@@ -1,13 +1,13 @@
 const obj = {
     name: "jameel",
-    printname: function () {
+    printName: function () {
         console.log(`my name is ${this.name}`);
     },
-    printnamedelayed: function () {
+    printNameDelayed: function () {
         setTimeout(function(){
-            this.printname();
+            this.printName();
         }.bind(this), 1000);
     },
 };
-obj.printname();
-obj.printnamedelayed();
+obj.printName();
+obj.printNameDelayed();
