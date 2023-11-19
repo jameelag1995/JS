@@ -9,5 +9,6 @@ const obj = {
         }.bind(this), 1000);
     },
 };
+
 obj.printName();
 obj.printNameDelayed();
