@@ -5,11 +5,11 @@ class Color {
         this.b = b;
         this.colorName = name;
     }
-    innerRgb() {
+    #innerRgb() {
         return `${this.r}, ${this.g}, ${this.b}`;
     }
     rgb() {
-        return `rgb(${this.innerRgb()})`;
+        return `rgb(${this.#innerRgb()})`;
     }
     hex() {
         return `#${this.r.toString(16)}${this.g.toString(16)}${this.b.toString(
@@ -17,7 +17,7 @@ class Color {
         )}`;
     }
     rgba(a = 1.0) {
-        return `rgba(${this.innerRgb()}, ${a})`;
+        return `rgba(${this.#innerRgb()}, ${a})`;
     }
 }
 const white = new Color(255, 255, 255, "white");
